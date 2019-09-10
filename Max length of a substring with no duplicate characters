@@ -29,6 +29,7 @@ int main() {
         }
         else
         {
+            mymap[s2[i]]=i;
             if(count>length)
             {
                 length=count;
