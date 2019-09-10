@@ -20,6 +20,7 @@ int main() {
     vector<char>v2;
     for(int i=1;i<=s.length();i++)
     {
+        //Making sure that the element which has came earlier is not occured in our window then it's okay
         if(mymap[s2[i]]==0|| mymap[s2[i]]<i-count)
         {
             count++;
@@ -38,6 +39,7 @@ int main() {
                 v.clear();
                 cout<<endl;
             }
+            //As now the string starts with the current element which has occured again so count=1
             count=1;
         }
     }
