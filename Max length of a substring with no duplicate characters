@@ -1,0 +1,44 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    //Length of longest substring
+    string s;
+    string s2;
+    cin>>s;
+    int j=1;
+    for(int i=0;i<s.length();i++)
+    {
+        s2[j]=s[i];
+        j++;
+    }
+    int count=0;
+    int length=0;
+    map<char,int>mymap;
+    vector<char>v;
+    vector<char>v2;
+    for(int i=1;i<=s.length();i++)
+    {
+        if(mymap[s2[i]]==0|| mymap[s2[i]]<i-count)
+        {
+            count++;
+            v.push_back(s2[i]);
+            mymap[s2[i]]=i;
+        }
+        else
+        {
+            if(count>length)
+            {
+                length=count;
+                for(int l=0;l<v.size();l++)
+                {
+                    cout<<v[l];
+                }
+                v.clear();
+                cout<<endl;
+            }
+            count=1;
+        }
+    }
+    cout<<length<<endl;
+}
